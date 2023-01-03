@@ -1,0 +1,10 @@
+export  { default as Category } from "../../components/category/Category";
+export  { default as CategoryDetail } from "../../components/category/CategoryDetail";
+export  { default as NotFoundPage } from "../../components/notFoundPage/NotFoundPage";
+export  { default as Home } from "../../components/home/Home";
+export  { default as Whatsapp } from "../../components/whatsapp/Whatsapp";
+export  { default as AboutUS } from "../../components/aboutUS/AboutUS";
+export  { default as Contact } from "../../components/contact/Contact";
+export  { default as Blog } from "../../components/blog/Blog";
+export  { default as Post } from "../../components/blog/Post";
+export  { default as Cart } from "../../components/category/Cart";
