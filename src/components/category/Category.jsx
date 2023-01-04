@@ -47,7 +47,7 @@ const Category = () => {
 
   const listProducts = (items) => {
     return (
-      <div>
+      <div className="row nosotros-contenido">
         <h1>Categorías</h1>
         <div className="productos-container">
           {items.map((products) => (
@@ -78,7 +78,7 @@ const Category = () => {
               </li>
             </li>
             <li className="breadcrumb-item active" aria-current="page">
-              Blog
+              Categorías
             </li>
           </ol>
         </nav>

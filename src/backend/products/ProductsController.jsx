@@ -15,13 +15,11 @@ class ProductsController {
             (e) => e.title.toLowerCase() === newTitle
           );
           setTimeout(() => {
-            console.log('11111')
             setProducts(result);
             setLoading(false);
           }, 3000);
         } else {
           setTimeout(() => {
-            console.log('22222')
             setProducts(response);
             setLoading(false);
           }, 3000);
