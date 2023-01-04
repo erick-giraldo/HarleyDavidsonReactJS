@@ -1,8 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Footer from "./components/footer/Footer";
-import NavBar from './components/navbar/Navbar'
+import NavBar from './components/navbar/NavBar'
 import { usersList, usersListConfig } from "./backend/users/ListUsers";
-// import ItemListContainer from "./components/itemListContainer/ItemListContainer";
 import {
   Home,
   Blog,
