@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Footer from "./components/footer/Footer";
-import NavBar from "./components/navbar/NavBar";
+import NavBar from './components/navbar/Navbar'
 import { usersList, usersListConfig } from "./backend/users/ListUsers";
 // import ItemListContainer from "./components/itemListContainer/ItemListContainer";
 import {
@@ -27,14 +27,6 @@ const App = () => {
             <div className="row hijo">
               <NavBar usersList={usersList} profile={usersListConfig} />
               <Routes>
-                {/* <Route
-            path=""
-            element={<NavBar usersList={usersList} profile={usersListConfig} />}
-          /> */}
-                {/* <Route
-            path=""
-            element={<ItemListContainer usersList={usersList} />}
-          /> */}
                 <Route path="" element={<Home />} />
                 <Route path="/nosotros" element={<AboutUS />} />
                 <Route path="/blog" element={<Blog />} />

@@ -6,7 +6,6 @@ export const useCartContext = () => useContext(CartContext);
 
 const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
-  console.log("🚀 ~ file: CartContext.jsx:9 ~ CartProvider ~ cart", cart)
 
   const addProduct = (item, quantity) => {
     if (isInCart(item.id)) {
