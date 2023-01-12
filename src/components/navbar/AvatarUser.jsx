@@ -32,6 +32,7 @@ const AvatarUser = () => {
               sx={{ mt: "45px" }}
               id="menu-appbar"
               anchorEl={anchorElUser}
+              className="avatar-menu"
               anchorOrigin={{
                 vertical: "top",
                 horizontal: "right",

@@ -100,7 +100,7 @@ const NavBar = (props) => {
           >
             <img src={Logo} width="60px" alt="Logo" />
           </Typography>
-          <Box sx={{ display: { xs: "none", sm: "block" }, width: 1700 }}>
+          <Box sx={{ display: { xs: "none", sm: "block" }, width: 1700 }} >
             {navItems.map((item) => (
               <NavLink
                 to={item.link}
@@ -112,7 +112,7 @@ const NavBar = (props) => {
               </NavLink>
             ))}
           </Box>
-         <SubMenu items={navItems} handleClose={handleClose} anchorEl={anchorEl}/>
+         <SubMenu items={navItems} handleClose={handleClose} anchorEl={anchorEl}  className='sub-menu' />
           <AvatarUser />
         </Toolbar>
       </AppBar>

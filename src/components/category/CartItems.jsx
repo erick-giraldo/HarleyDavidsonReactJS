@@ -1,5 +1,6 @@
 import React from "react";
 import { useCartContext } from "../../context/CartContext";
+import { NavLink } from "react-router-dom";
 import Button from "@mui/material/Button";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
@@ -10,10 +11,13 @@ import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import DeleteIcon from "@mui/icons-material/Delete";
 import SendIcon from "@mui/icons-material/Send";
+import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import Stack from "@mui/material/Stack";
 
-const CartItems = () => {
-  const { cart, totalPrice, clearCart } = useCartContext();
+const CartItems = (props) => {
+  const {handleOpen} = props;
+  const {removeProduct, cart, totalPrice, clearCart } = useCartContext();
+
 
   return (
     <Stack direction="row" spacing={2}>
@@ -28,6 +32,7 @@ const CartItems = () => {
       <Button
         className="btn-shop-cart"
         variant="contained"
+        onClick={handleOpen}
         endIcon={<SendIcon />}
       >
         confirmar compra
@@ -39,9 +44,10 @@ const CartItems = () => {
               <TableCell align="center" colSpan={4}>
                 Detalle
               </TableCell>
-              <TableCell align="right">Precio</TableCell>
+              <TableCell align="center" colSpan={2}>Precio</TableCell>
             </TableRow>
             <TableRow>
+              <TableCell>Acción</TableCell>
               <TableCell>Producto</TableCell>
               <TableCell>Descripción</TableCell>
               <TableCell align="right">Cantidad</TableCell>
@@ -52,8 +58,15 @@ const CartItems = () => {
           <TableBody>
             {cart.map((row) => (
               <TableRow key={row.desc}>
+                <TableCell className="td-action">
+                <Button
+                onClick={()=>(removeProduct(row.id))}
+               ><DeleteForeverIcon  className="delete-item"/> </Button>
+                </TableCell>
                 <TableCell>
+                  <NavLink to={`/item/${row.id}`}> 
                   <img src={row.image} alt="product" width="150px" />
+                  </NavLink>
                 </TableCell>
                 <TableCell>{row.name}</TableCell>
                 <TableCell align="right">{row.quantity}</TableCell>
@@ -62,8 +75,8 @@ const CartItems = () => {
               </TableRow>
             ))}
             <TableRow>
-              <TableCell colSpan={3} />
-              <TableCell className="total-cart" colSpan={1}>
+              <TableCell colSpan={4} />
+              <TableCell className="total-cart" colSpan={2}>
                 Total
               </TableCell>
               <TableCell className="total-cart-text" align="right">

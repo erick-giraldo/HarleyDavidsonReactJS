@@ -1,6 +1,169 @@
-// * {
-//     color: #747474;
-// }
+.padre {
+    .hijo {
+        .car-empty {
+            width: 100%;
+        }
+    }
+}
+
+.modal-content {
+    .modal-body {
+        .paying-card {
+            display: none;
+
+            &.active {
+                display: block;
+            }
+
+            .pad-adjust {
+                margin-bottom: 1rem
+            }
+        }
+
+        .choose-payment {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            label {
+                font-size: 15px;
+                color: red;
+            }
+
+            select {
+                width: auto !important;
+            }
+
+        }
+
+        .payment {
+            display: flex;
+            justify-content: center;
+            padding-top: 1rem;
+
+            img {
+                width: 430px;
+                border-radius: 10px;
+            }
+
+            .yape {
+                display: none;
+
+                &.active {
+                    display: block;
+
+                }
+            }
+
+            .plin {
+                display: none;
+
+                &.active {
+                    display: block;
+                }
+            }
+        }
+    }
+
+    .modal-footer {
+        display: block;
+
+        .info-payment {
+            font-size: 12px;
+            color: red;
+            display: none;
+
+            &.active {
+                display: block;
+            }
+
+        }
+
+        .btn-pay-checkout {
+            background-color: #6fba8c;
+            border-radius: 8px;
+            border: none;
+            color: #fff;
+            width: 100%;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            height: 50px;
+            display: none;
+            justify-content: center;
+            align-items: center;
+
+            &.active {
+                display: block;
+            }
+
+            .spinnerPay {
+                display: none;
+
+                &.active {
+                    display: block;
+                }
+
+            }
+
+            .spinnerPay {
+                border: 4px solid rgba(0, 0, 0, 0.1);
+                width: 25px;
+                height: 25px;
+                border-radius: 50%;
+                border-left-color: #fff;
+                animation: spin 1s ease infinite;
+            }
+
+            .btn-pay-txt {
+                display: none;
+
+                &.active {
+                    display: block;
+                }
+            }
+
+            .btn-card-txt {
+                display: none;
+
+                &.active {
+                    display: block;
+                }
+            }
+
+            @keyframes spin {
+                0% {
+                    transform: rotate(0deg);
+                }
+
+                100% {
+                    transform: rotate(360deg);
+                }
+            }
+        }
+
+
+    }
+}
+
+.payment-form {
+    margin: 0;
+    padding: 0;
+    margin-bottom: 1rem;
+}
+
+.select-pay {
+    height: 39px;
+
+    .seleccione {
+        color: #707980;
+    }
+}
+
+.hr-checkout {
+    width: 500px;
+    margin: 10px 0 10px -32px;
+}
 
 .card-container {
     padding: 0 2rem;
@@ -59,7 +222,14 @@
     }
 }
 
-// category details
+.td-action {
+    text-align-last: center;
+
+    .delete-item {
+        fill: #5b2a2a;
+    }
+}
+
 .video-player {
     top: 0%;
     left: 0%;
@@ -75,10 +245,16 @@ video {
     width: 100%;
 }
 
+.modal-title {
+    color: #747474;
+    margin: 0;
+}
+
 .container-category {
-    .hero-360__bike-block{
+    .hero-360__bike-block {
         margin-top: 3rem;
     }
+
     .title-category {
         font-size: 1.0625rem !important;
         line-height: 1.125rem !important;
@@ -129,9 +305,11 @@ video {
         font-family: secondary-font-bold, notosans-bold, sans-serif;
         font-weight: 700;
     }
-    .selector-panel{
+
+    .selector-panel {
         margin: 0 1rem;
     }
+
     .hero-category {
         display: flex;
         flex-wrap: nowrap;
@@ -143,13 +321,38 @@ video {
     }
 
 }
-.loading{
+
+.loading {
     height: calc(100vh - 55px);
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    gap: 2rem;
 }
 
+.sub-menu {
+    .MuiPaper-elevation {
+        background-color: #070d1b;
+
+        a {
+            color: #fff;
+
+            &:hover {
+                color: $li-active;
+
+                li {
+                    background-color: rgb(110 110 110 / 37%);
+                }
+            }
+
+        }
+
+        .active {
+            color: $li-active;
+        }
+    }
+}
 
 @media (max-width: 993px) {
     .video-player {
@@ -331,6 +534,10 @@ ul.color-selector__details.hero-360__details {
     padding: 0 2rem;
     display: flex;
     flex-direction: column;
+    .is-in-cart{
+        font-weight: 700;
+        color: red;
+    }
 }
 
 .count-center {

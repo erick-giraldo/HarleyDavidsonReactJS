@@ -11,7 +11,7 @@
 
                     .MuiButtonBase-root {
                         &:hover {
-                            color: yellow;
+                            color: $li-active;
                         }
                     }
                 }
@@ -19,10 +19,24 @@
                 .active {
 
                     .MuiButtonBase-root {
-                        color: yellow;
+                        color: $li-active;
                     }
 
                 }
+            }
+        }
+    }
+}
+
+.avatar-menu {
+    .MuiPaper-elevation {
+        background-color:#070d1b;
+
+        li {
+            color: #fff;
+            &:hover {
+                color: $li-active;
+                background-color: rgb(110 110 110 / 37%);
             }
         }
     }
@@ -38,7 +52,7 @@
     .side-bar {
         .MuiList-root {
             .active {
-                color: yellow;
+                color: $li-active;
 
                 li {
                     background: #75758136;
@@ -73,7 +87,7 @@
 .MuiBox-root {
     .active {
         .MuiButtonBase-root {
-            color: yellow;
+            color: $li-active;
         }
         
     }
@@ -81,7 +95,7 @@
     .MuiButtonBase-root {
 
         &:hover {
-            color: yellow;
+            color: $li-active;
         }
     }
 

@@ -3,6 +3,8 @@ import ProductsController from "../../backend/products/ProductsController";
 import "../../assets/scss/index.scss";
 import { Link, useParams } from "react-router-dom";
 import Loading from "../loading/Loading";
+import isEmpty from "is-empty";
+import noFoundImage from "../../assets/images/no-found.webp";
 
 const Category = () => {
   const [products, setProducts] = useState([]);
@@ -64,12 +66,11 @@ const Category = () => {
     );
   };
 
-  return (
-    loading ? (
-      <Loading />
-    ) : (
+  return loading ? (
+    <Loading text="Buscando Productos" />
+  ) : !isEmpty(products) ? (
     <div className="col-lg-10 col-md-12 col-sm-12 main-container">
-       <div className="referencia">
+      <div className="referencia">
         <nav aria-label="breadcrumb">
           <ol className="descolgado breadcrumb">
             <li className="breadcrumb-item">
@@ -83,8 +84,13 @@ const Category = () => {
           </ol>
         </nav>
       </div>
-        {listProducts(products)}
-    </div>)
+      {listProducts(products)}
+    </div>
+  ) : (
+    <div className="loading">
+      <img src={noFoundImage} alt="noFoundImage" />
+      <h4>La categoria no existe</h4>
+    </div>
   );
 };
 

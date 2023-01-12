@@ -16,13 +16,14 @@ const SubMenu = (props) => {
       onClose={handleClose}
       PopoverClasses={{
         vertical: "bottom",
-        horizontal: "center",
+        horizontal: "center"
       }}
+      className='sub-menu'
     >
       {getSubMenu.map((p) => {
         const newRoute = p.link.toLowerCase().replaceAll(" ", "-");
         return (
-          <NavLink to={`category/${newRoute}`}>
+          <NavLink to={`category/${newRoute}`} >
             <MenuItem onClick={handleClose}>{p.name}</MenuItem>
           </NavLink>
         );
