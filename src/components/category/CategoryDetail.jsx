@@ -18,7 +18,6 @@ const CategoryDetail = () => {
   const { isInCart, addProduct } = useCartContext();
 
   const { id } = useParams();
-  const fff = isInCart(products.id);
 
   useEffect(() => {
     ProductsController.getProductById({

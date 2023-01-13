@@ -20,7 +20,7 @@ const CartItems = (props) => {
 
 
   return (
-    <Stack direction="row" spacing={2}>
+    <Stack direction="row" spacing={2} className='table-cart'>
       <Button
         className="btn-clear-cart"
         variant="outlined"

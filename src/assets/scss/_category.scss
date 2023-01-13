@@ -8,6 +8,16 @@
 
 .modal-content {
     .modal-body {
+        .payment-form{
+            .pad-adjust {
+                margin-bottom: 1rem
+            }
+            .validate-email{
+                margin: 0;
+                color: red;
+                font-size: .8rem; 
+            }
+        }
         .paying-card {
             display: none;
 
@@ -145,11 +155,12 @@
 
     }
 }
-
+.MuiBox-root{
+    border-radius: 20px;
+}
 .payment-form {
     margin: 0;
     padding: 0;
-    margin-bottom: 1rem;
 }
 
 .select-pay {
@@ -382,7 +393,6 @@ video {
     -ms-flex-wrap: nowrap;
     flex-wrap: nowrap;
     overflow-x: auto;
-    -webkit-transition: opacity 300ms;
     /* transition: opacity 300ms; */
 }
 
@@ -580,7 +590,7 @@ ul.color-selector__details.hero-360__details {
     font-weight: 600 !important;
 }
 
-.css-e53awj-MuiStack-root {
+.table-cart {
     display: flex;
     flex-wrap: wrap;
 
@@ -611,7 +621,7 @@ ul.color-selector__details.hero-360__details {
 }
 
 
-.css-e53awj-MuiStack-root {
+.table-cart {
     display: flex;
     justify-content: flex-end;
 }

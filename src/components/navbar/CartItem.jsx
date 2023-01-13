@@ -15,7 +15,7 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
   },
 }));
 const CartItem =() =>{
-  const { cart, totalProducts } = useCartContext();
+  const { totalProducts } = useCartContext();
 
 const total = totalProducts();
 
@@ -24,7 +24,7 @@ const total = totalProducts();
          <Link
               to="/cart"
             >
-      <StyledBadge  badgeContent={totalProducts()} color="success">
+      <StyledBadge  badgeContent={`${total}`} color="success">
         <ShoppingCartIcon />
       </StyledBadge>
       </Link>

@@ -1,26 +1,26 @@
 import isEmpty from "is-empty";
 import Swal from "sweetalert2";
 
-import { createOrder } from "./CartServices";
+import { createOrder,updateStock } from "./CartServices";
 
 class CartController {
-
-  static saveOrder = async ({   
+  static saveOrder = async ({
     order,
     setLoading,
     clearCart,
     showAlertOrder,
-    handleClose }) => {
+    handleClose,
+  }) => {
     try {
       setLoading(true);
       const response = await createOrder(order);
       if (!isEmpty(response)) {
-          setTimeout(() => {
-            showAlertOrder(response);
-            handleClose(false);
-            clearCart();
-            setLoading(false);
-          }, 2000);
+        setTimeout(() => {
+          showAlertOrder(response);
+          handleClose(false);
+          clearCart();
+          setLoading(false);
+        }, 2000);
       }
       return true;
     } catch (error) {
@@ -34,7 +34,5 @@ class CartController {
       return false;
     }
   };
-
-
 }
 export default CartController;
