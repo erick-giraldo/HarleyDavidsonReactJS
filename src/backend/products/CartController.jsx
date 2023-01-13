@@ -1,7 +1,7 @@
 import isEmpty from "is-empty";
 import Swal from "sweetalert2";
 
-import { createOrder,updateStock } from "./CartServices";
+import { createOrder } from "./CartServices";
 
 class CartController {
   static saveOrder = async ({

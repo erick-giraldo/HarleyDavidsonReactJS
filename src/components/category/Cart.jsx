@@ -8,7 +8,6 @@ import Checkout from "./Checkout";
 import Loading from "../loading/Loading";
 import Swal from "sweetalert2";
 
-
 const Cart = () => {
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
@@ -47,7 +46,6 @@ const Cart = () => {
     );
   }
 
-
   const showAlertOrder = (id) => {
     Swal.fire({
       position: "center",
@@ -55,14 +53,14 @@ const Cart = () => {
       title: "Tu compra ha sido generada",
       text: "Su numero de orden es " + id,
       confirmButtonColor: "#15803D",
+    }).then(() => {
+      window.location.href = "/category";
     });
   };
 
-
-  return (
-    loading ? (
-      <Loading />
-    ) : (
+  return loading ? (
+    <Loading />
+  ) : (
     <main className="col-lg-10 col-md-12 col-sm-12 main-container">
       <div className="referencia">
         <nav aria-label="breadcrumb">
@@ -89,7 +87,6 @@ const Cart = () => {
         showAlertOrder={showAlertOrder}
       />
     </main>
-    )
   );
 };
 export default Cart;

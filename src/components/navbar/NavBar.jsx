@@ -59,9 +59,8 @@ const navItems = [
 
 const NavBar = (props) => {
   const { window } = props;
-  const [mobileOpen, setMobileOpen] = useState (false);
+  const [mobileOpen, setMobileOpen] = useState(false);
   const [anchorEl, setAnchorEl] = useState(null);
-
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
@@ -73,8 +72,6 @@ const NavBar = (props) => {
   const handleClose = () => {
     setAnchorEl(null);
   };
-
-
 
   const container =
     window !== undefined ? () => window().document.body : undefined;
@@ -100,7 +97,7 @@ const NavBar = (props) => {
           >
             <img src={Logo} width="60px" alt="Logo" />
           </Typography>
-          <Box sx={{ display: { xs: "none", sm: "block" }, width: 1700 }} >
+          <Box sx={{ display: { xs: "none", sm: "block" }, width: 1700 }}>
             {navItems.map((item) => (
               <NavLink
                 to={item.link}
@@ -112,7 +109,12 @@ const NavBar = (props) => {
               </NavLink>
             ))}
           </Box>
-         <SubMenu items={navItems} handleClose={handleClose} anchorEl={anchorEl}  className='sub-menu' />
+          <SubMenu
+            items={navItems}
+            handleClose={handleClose}
+            anchorEl={anchorEl}
+            className="sub-menu"
+          />
           <AvatarUser />
         </Toolbar>
       </AppBar>
@@ -122,7 +124,6 @@ const NavBar = (props) => {
           container={container}
           mobileOpen={mobileOpen}
           navItems={navItems}
-          
         />
       </Box>
     </Box>

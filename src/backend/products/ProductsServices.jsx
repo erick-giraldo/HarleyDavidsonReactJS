@@ -1,4 +1,4 @@
-import { getFirestore, collection, getDocs, updateDoc } from "firebase/firestore";
+import { getFirestore, collection, getDocs } from "firebase/firestore";
 import isEmpty from "is-empty";
 
 export const getProducts = async () => {

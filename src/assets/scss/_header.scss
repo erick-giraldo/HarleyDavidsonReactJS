@@ -1,113 +1,106 @@
 .MuiPaper-root {
-    &.MuiAppBar-root {
-        background-color: #070d1b;
-    }
+  &.MuiAppBar-root {
+    background-color: #070d1b;
+  }
 
-    .MuiContainer-root {
-        .MuiToolbar-root {
-            .MuiBox-root {
-                a {
-                    text-decoration: none;
+  .MuiContainer-root {
+    .MuiToolbar-root {
+      .MuiBox-root {
+        a {
+          text-decoration: none;
 
-                    .MuiButtonBase-root {
-                        &:hover {
-                            color: $li-active;
-                        }
-                    }
-                }
-
-                .active {
-
-                    .MuiButtonBase-root {
-                        color: $li-active;
-                    }
-
-                }
+          .MuiButtonBase-root {
+            &:hover {
+              color: $li-active;
             }
+          }
         }
+
+        .active {
+          .MuiButtonBase-root {
+            color: $li-active;
+          }
+        }
+      }
     }
+  }
 }
 
 .avatar-menu {
-    .MuiPaper-elevation {
-        background-color:#070d1b;
+  .MuiPaper-elevation {
+    background-color: #070d1b;
 
-        li {
-            color: #fff;
-            &:hover {
-                color: $li-active;
-                background-color: rgb(110 110 110 / 37%);
-            }
-        }
+    li {
+      color: #fff;
+
+      &:hover {
+        color: $li-active;
+        background-color: rgb(110 110 110 / 37%);
+      }
     }
+  }
 }
 
-
 .MuiDrawer-root {
-    .MuiPaper-root {
-        background-color: black;
-        color: #fff;
-    }
+  .MuiPaper-root {
+    background-color: black;
+    color: #fff;
+  }
 
-    .side-bar {
-        .MuiList-root {
-            .active {
-                color: $li-active;
+  .side-bar {
+    .MuiList-root {
+      .active {
+        color: $li-active;
 
-                li {
-                    background: #75758136;
-                }
-            }
-
-            a {
-                color: #fff;
-                font-weight: 500;
-
-                li {
-                    &:hover {
-                        background: #75758136;
-                    }
-                }
-
-            }
+        li {
+          background: #75758136;
         }
+      }
+
+      a {
+        color: #fff;
+        font-weight: 500;
+
+        li {
+          &:hover {
+            background: #75758136;
+          }
+        }
+      }
     }
+  }
 }
 
 .MuiBox-root.css-2uchni {
-    gap: 10px;
-    display: flex;
+  gap: 10px;
+  display: flex;
 
-    svg {
-        color: #fff;
-    }
+  svg {
+    color: #fff;
+  }
 }
-
 
 .MuiBox-root {
-    .active {
-        .MuiButtonBase-root {
-            color: $li-active;
-        }
-        
-    }
-
+  .active {
     .MuiButtonBase-root {
-
-        &:hover {
-            color: $li-active;
-        }
+      color: $li-active;
     }
+  }
 
+  .MuiButtonBase-root {
+    &:hover {
+      color: $li-active;
+    }
+  }
 }
 
-@media (max-width: 599px)  {
-    .MuiBox-root{
-    .MuiPaper-root{
-       .MuiToolbar-root{
+@media (max-width: 599px) {
+  .MuiBox-root {
+    .MuiPaper-root {
+      .MuiToolbar-root {
         display: flex;
         justify-content: space-between;
-       } 
+      }
     }
-}
+  }
 }

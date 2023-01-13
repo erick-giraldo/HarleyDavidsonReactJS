@@ -23,8 +23,8 @@ const Checkout = (props) => {
 
   const validateEmails = (email1, email2) => {
     if (
-      (!isEmpty(email1) &&
-      !isEmpty(email2)) &&
+      !isEmpty(email1) &&
+      !isEmpty(email2) &&
       email1.toLowerCase() === email2.toLowerCase()
     ) {
       return true;
@@ -43,7 +43,7 @@ const Checkout = (props) => {
       description: product.description,
       price: product.price,
       quantity: product.quantity,
-      stock:product.stock
+      stock: product.stock,
     })),
     total: totalPrice(),
     paymetod: pago,

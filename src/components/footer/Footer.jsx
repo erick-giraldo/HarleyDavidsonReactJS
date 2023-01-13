@@ -5,7 +5,6 @@ import "../../assets/scss/index.scss";
 
 const Footer = () => {
   return (
-
     <footer className="col-lg-12 col-md-12 footer footer-container">
       <div className="redes">
         <a href="https://facebook.com" target="_blank" rel="noreferrer">
@@ -24,8 +23,7 @@ const Footer = () => {
       <p>© 2022. Designed by Erick Giraldo. All right reserved.</p>
       <img src={logo} alt="logo-footer" width="50px" />
     </footer>
+  );
+};
 
-  )
-}
-
-export default Footer
+export default Footer;

@@ -49,7 +49,7 @@ const CartProvider = ({ children }) => {
 
   const removeProduct = (id) => {
     const items = JSON.parse(localStorage.getItem("cart"));
-    const productFilter = items.filter((product) => product.id != id);
+    const productFilter = items.filter((product) => product.id !== id);
     localStorage.setItem("cart", JSON.stringify(productFilter));
     getDataCart();
   };

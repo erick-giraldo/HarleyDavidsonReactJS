@@ -8,16 +8,18 @@
 
 .modal-content {
     .modal-body {
-        .payment-form{
+        .payment-form {
             .pad-adjust {
                 margin-bottom: 1rem
             }
-            .validate-email{
+
+            .validate-email {
                 margin: 0;
                 color: red;
-                font-size: .8rem; 
+                font-size: .8rem;
             }
         }
+
         .paying-card {
             display: none;
 
@@ -155,9 +157,11 @@
 
     }
 }
-.MuiBox-root{
+
+.MuiBox-root {
     border-radius: 20px;
 }
+
 .payment-form {
     margin: 0;
     padding: 0;
@@ -544,7 +548,8 @@ ul.color-selector__details.hero-360__details {
     padding: 0 2rem;
     display: flex;
     flex-direction: column;
-    .is-in-cart{
+
+    .is-in-cart {
         font-weight: 700;
         color: red;
     }

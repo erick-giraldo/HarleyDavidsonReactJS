@@ -11,16 +11,15 @@ import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import DeleteIcon from "@mui/icons-material/Delete";
 import SendIcon from "@mui/icons-material/Send";
-import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
+import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 import Stack from "@mui/material/Stack";
 
 const CartItems = (props) => {
-  const {handleOpen} = props;
-  const {removeProduct, cart, totalPrice, clearCart } = useCartContext();
-
+  const { handleOpen } = props;
+  const { removeProduct, cart, totalPrice, clearCart } = useCartContext();
 
   return (
-    <Stack direction="row" spacing={2} className='table-cart'>
+    <Stack direction="row" spacing={2} className="table-cart">
       <Button
         className="btn-clear-cart"
         variant="outlined"
@@ -44,7 +43,9 @@ const CartItems = (props) => {
               <TableCell align="center" colSpan={4}>
                 Detalle
               </TableCell>
-              <TableCell align="center" colSpan={2}>Precio</TableCell>
+              <TableCell align="center" colSpan={2}>
+                Precio
+              </TableCell>
             </TableRow>
             <TableRow>
               <TableCell>Acción</TableCell>
@@ -59,13 +60,13 @@ const CartItems = (props) => {
             {cart.map((row) => (
               <TableRow key={row.desc}>
                 <TableCell className="td-action">
-                <Button
-                onClick={()=>(removeProduct(row.id))}
-               ><DeleteForeverIcon  className="delete-item"/> </Button>
+                  <Button onClick={() => removeProduct(row.id)}>
+                    <DeleteForeverIcon className="delete-item" />{" "}
+                  </Button>
                 </TableCell>
                 <TableCell>
-                  <NavLink to={`/item/${row.id}`}> 
-                  <img src={row.image} alt="product" width="150px" />
+                  <NavLink to={`/item/${row.id}`}>
+                    <img src={row.image} alt="product" width="150px" />
                   </NavLink>
                 </TableCell>
                 <TableCell>{row.name}</TableCell>

@@ -8,6 +8,7 @@ import Modal from "@mui/material/Modal";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
+import { NavLink } from "react-router-dom";
 
 const style = {
   position: "absolute",
@@ -63,8 +64,7 @@ const ModalCheckOut = (props) => {
   const validateButton = (email1, email2) => {
     if (!validateInputs() && validateEmails(email1, email2)) {
       return true;
-    } else 
-    return false;
+    } else return false;
   };
 
   return (
@@ -229,6 +229,7 @@ const ModalCheckOut = (props) => {
                           src={Tarjeta}
                           className="img-rounded"
                           width="90px"
+                          alt="tarjeta"
                         />
                       </div>
                     </div>
@@ -253,7 +254,7 @@ const ModalCheckOut = (props) => {
                               className="text-muted"
                             />
                             Guardar detalles para pagos rápidos
-                            <a href="#"> aprender cómo ?</a>
+                            <NavLink to="./"> aprender cómo ?</NavLink>
                           </label>
                         </div>
                       </div>

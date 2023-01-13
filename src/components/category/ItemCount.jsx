@@ -16,7 +16,7 @@ const ItemCount = ({ stock, initial, onAdd }) => {
             setContador((prev) => prev - 1);
           }}
           disabled={contador === initial}
-          className='min-max-count'
+          className="min-max-count"
         >
           -
         </button>
@@ -24,8 +24,7 @@ const ItemCount = ({ stock, initial, onAdd }) => {
         <button
           onClick={aumentarContador}
           disabled={contador >= stock}
-          className='min-max-count'
-
+          className="min-max-count"
         >
           +
         </button>

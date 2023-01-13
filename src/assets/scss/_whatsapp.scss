@@ -44,7 +44,8 @@
 .btn-whatsapp {
   position: fixed;
   bottom: 4rem;
-  right: 1rem; 
+  right: 1rem;
+
   .wcs_button_label {
     cursor: pointer;
     bottom: 4.5rem;
@@ -57,23 +58,28 @@
     font-weight: 500;
     transition: .3s ease all;
   }
-  .wcs_button_label{
+
+  .wcs_button_label {
     pointer-events: none;
   }
+
   .whatsapp-img {
-    width: 3rem; 
-    &:hover{
+    width: 3rem;
+
+    &:hover {
       animation: subir-bajar 0.80s alternate infinite ease-in;
     }
   }
-  &:hover { 
-      & .wcs_button_label{
-        display: none;
-      }
-      & .wcs_popup{
-        display: block;
-      } 
-      }
+
+  &:hover {
+    & .wcs_button_label {
+      display: none;
+    }
+
+    & .wcs_popup {
+      display: block;
+    }
+  }
 }
 
 

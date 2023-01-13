@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { Dropdown, DropdownButton } from "react-bootstrap";
 import { Link, useParams } from "react-router-dom";
 import ProductsController from "../../backend/products/ProductsController";
-import CircularProgress from "@mui/material/CircularProgress";
 import Button from "@mui/material/Button";
 import VideoPlayer from "./VideoPlayer";
 import ItemCount from "./ItemCount";
@@ -41,7 +40,7 @@ const CategoryDetail = () => {
       timer: 1500,
     });
   };
-  
+
   const renderItemCount = () => {
     if (products.stock > 0) {
       return (

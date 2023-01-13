@@ -1,6 +1,7 @@
 /* para iconos */
 @import "https://use.fontawesome.com/releases/v6.1.1/css/all.css";
-.footer-container{
+
+.footer-container {
   bottom: 0;
   position: fixed;
 }
@@ -13,22 +14,27 @@
   align-items: center;
   background-color: #070d1b;
   height: 55px;
+
   .redes {
     margin-left: 10px;
     font-size: 20px;
     letter-spacing: 8px;
-    > a {
+
+    >a {
       text-decoration: none;
       color: #fff;
-      i{
-        color: #fff!important;
+
+      i {
+        color: #fff !important;
       }
     }
   }
-  p{
+
+  p {
     color: #fff;
   }
-  > img {
+
+  >img {
     margin-right: 10px;
   }
 }
@@ -40,12 +46,14 @@
     display: flex;
     align-items: center;
     width: 100vw;
+
     .redes {
       margin: 0 auto;
       letter-spacing: 10px;
     }
 
     > {
+
       p,
       img {
         display: none;
