@@ -1,5 +1,5 @@
 
-![Logo](https://harley-davidson-react-js.vercel.app/static/media/logo.8cf8b83cbb361f54796f.webp)
+![Logo](https://turbologo.com/articles/wp-content/uploads/2019/10/harley-davidson-logo.png)
 
 
 # Harley Davidson
