@@ -8,9 +8,11 @@ import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import Avatar from "@mui/material/Avatar";
 import AvatarImg from "../../assets/images/avatar.webp";
+import { useAuth } from "../../context/AuthContext";
 
 const AvatarUser = () => {
   const [anchorElUser, setAnchorElUser] = useState(null);
+  const { user, logout } = useAuth();
 
   const settings = ["Profile", "Account", "Dashboard", "Logout"];
   const handleOpenUserMenu = (event) => {
@@ -19,11 +21,14 @@ const AvatarUser = () => {
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
   };
-
+  const handleLogout = async () => {
+    console.log("1111");
+    await logout();
+  };
   return (
     <Box sx={{ flexGrow: 0 }}>
       <CartItem />
-      <Tooltip title="Open settings">
+      <Tooltip title={`Bienvenido ${user.displayName}`}>
         <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
           <Avatar alt="Remy Sharp" src={AvatarImg} />
         </IconButton>
@@ -45,9 +50,14 @@ const AvatarUser = () => {
         open={Boolean(anchorElUser)}
         onClose={handleCloseUserMenu}
       >
-        {settings.map((setting) => (
-          <MenuItem key={setting} onClick={handleCloseUserMenu}>
-            <Typography textAlign="center">{setting}</Typography>
+        {settings.map((p) => (
+          <MenuItem key={p} onClick={handleCloseUserMenu}>
+            <Typography
+              textAlign="center"
+              onClick={p === "Logout" ? handleLogout : ""}
+            >
+              {p}
+            </Typography>
           </MenuItem>
         ))}
       </Menu>

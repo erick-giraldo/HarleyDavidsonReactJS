@@ -2,48 +2,31 @@ import React, { useState } from "react";
 import logo from "../../assets/images/logo.webp";
 import facebook from "../../assets/images/iconos/facebook.webp";
 import gmail from "../../assets/images/iconos/gmail.webp";
-import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
+import { Link, useNavigate } from "react-router-dom";
 import "../../assets/scss/index.scss";
 
-export const Login = () => {
-  const { login, loginWithGoogle, resetPassword } = useAuth();
-  const [error, setError] = useState("");
+export const Register = () => {
+  const { signup } = useAuth();
+
   const [user, setUser] = useState({
     email: "",
     password: "",
   });
-
+  const [error, setError] = useState("");
   const navigate = useNavigate();
+  const [register, setRegister] = useState(false);
+  const isRegister = register ? "active" : "";
 
-  const handleSubmitLogin = async (e) => {
-    e.preventDefault();
-    setError("");
-    try {
-      await login(user.email, user.password);
-      navigate("/");
-    } catch (error) {
-      setError(error.message);
-    }
-  };
   const handleChange = ({ target: { value, name } }) =>
     setUser({ ...user, [name]: value });
 
-  const handleGoogleSignin = async () => {
-    try {
-      await loginWithGoogle();
-      navigate("/");
-    } catch (error) {
-      setError(error.message);
-    }
-  };
-
-  const handleResetPassword = async (e) => {
+  const handleSubmitRegister = async (e) => {
     e.preventDefault();
-    if (!user.email) return setError("Write an email to reset password");
+    setError("");
     try {
-      await resetPassword(user.email);
-      setError("We sent you an email. Check your inbox");
+      await signup(user.email, user.password);
+      navigate("/");
     } catch (error) {
       setError(error.message);
     }
@@ -60,10 +43,9 @@ export const Login = () => {
           <div className="text-end">
             <img src={logo} alt="Logo" width="60x" height="60px" />
           </div>
-          {/*LOGIN*/}
-          <div id="login" className="login">
-            <h2 className="fw-bold text-center py-5">Bienvenidos</h2>
-            <form onSubmit={handleSubmitLogin}>
+          <div id="register" className="register">
+            <h2 className="fw-bold text-center py-5">Registrate</h2>
+            <form onSubmit={handleSubmitRegister}>
               <div className="mb-4">
                 <label htmlFor="user" className="form-label">
                   Ingrese su Email
@@ -72,6 +54,7 @@ export const Login = () => {
                   type="email"
                   className="form-control"
                   name="email"
+                  id="email"
                   onChange={handleChange}
                 />
               </div>
@@ -83,6 +66,7 @@ export const Login = () => {
                   type="password"
                   className="form-control"
                   name="password"
+                  id="pass"
                   onChange={handleChange}
                 />
               </div>
@@ -90,20 +74,15 @@ export const Login = () => {
                 <button
                   type="submit"
                   className="btn btn-primary-auth"
-                  id="btn-log-submit"
+                  id="btn-reg-submit"
                 >
-                  <div className="spinnerLog" />
-                  <div className="log-submit">Iniciar Sesión</div>
+                  <div className="spinnerReg" />
+                  <div className="reg-submit">Registrarse</div>
                 </button>
               </div>
               <div className="my-3">
                 <span>
-                  No tienes cuenta?{" "}
-                  <Link
-                  to={`/register`}
-                  >
-                  Regístrate
-                  </Link>
+                  Ya tienes cuenta? <Link to={`/login`}>Inicia Sesión</Link>
                 </span>
                 <br />
                 <span>
@@ -135,7 +114,7 @@ export const Login = () => {
                   </button>
                 </div>
                 <div className="col">
-                  <button className="btn btn-outline-danger w-100 my-1" onClick={handleGoogleSignin}> 
+                  <button className="btn btn-outline-danger w-100 my-1">
                     <div className="row align-items-center">
                       <div className="col-2 d-none d-md-block">
                         <img
