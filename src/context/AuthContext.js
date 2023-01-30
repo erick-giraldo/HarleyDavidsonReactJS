@@ -19,8 +19,9 @@ export const useAuth = () => {
 };
 
 export function AuthProvider({ children }) {
-  const [user, setUser] = useState(null);
-  const [loading, setLoading] = useState(true);
+  const [user, setUser] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [loadingAuth, setLoadingAuth] = useState(false);
 
   const signup = (email, password) => {
     return createUserWithEmailAndPassword(auth, email, password);
@@ -36,16 +37,14 @@ export function AuthProvider({ children }) {
   };
 
   const logout = () => {
-    console.log("yaaaaa")
     signOut(auth)};
-  //logout()
 
   const resetPassword = async (email) => sendPasswordResetEmail(auth, email);
 
   useEffect(() => {
     const unsubuscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
-      setLoading(false);
+      setLoadingAuth(false);
     });
     return () => unsubuscribe();
   }, []);
@@ -58,6 +57,8 @@ export function AuthProvider({ children }) {
         user,
         logout,
         loading,
+        loadingAuth,
+        setLoading,
         loginWithGoogle,
         resetPassword,
       }}

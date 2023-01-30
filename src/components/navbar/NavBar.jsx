@@ -12,6 +12,7 @@ import { NavLink } from "react-router-dom";
 import SideBar from "./SideBar";
 import AvatarUser from "./AvatarUser";
 import SubMenu from "./SubMenu";
+import { useAuth } from "../../context/AuthContext";
 
 const navItems = [
   {
@@ -58,6 +59,7 @@ const navItems = [
 ];
 
 const NavBar = (props) => {
+  const { loading } = useAuth();
   const { window } = props;
   const [mobileOpen, setMobileOpen] = useState(false);
   const [anchorEl, setAnchorEl] = useState(null);
@@ -76,7 +78,7 @@ const NavBar = (props) => {
   const container =
     window !== undefined ? () => window().document.body : undefined;
 
-  return (
+  return !loading ?  (
     <Box sx={{ display: "flex" }}>
       <CssBaseline />
       <AppBar component="nav">
@@ -127,7 +129,7 @@ const NavBar = (props) => {
         />
       </Box>
     </Box>
-  );
+  ): '';
 };
 
 export default NavBar;

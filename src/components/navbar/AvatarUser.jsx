@@ -25,10 +25,11 @@ const AvatarUser = () => {
     console.log("1111");
     await logout();
   };
+  const userLogin = (user.displayName === null) ? user.email : user.displayName
   return (
     <Box sx={{ flexGrow: 0 }}>
       <CartItem />
-      <Tooltip title={`Bienvenido ${user.displayName}`}>
+      <Tooltip title={`Bienvenido ${userLogin}`}>
         <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
           <Avatar alt="Remy Sharp" src={AvatarImg} />
         </IconButton>

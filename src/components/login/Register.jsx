@@ -7,7 +7,7 @@ import { Link, useNavigate } from "react-router-dom";
 import "../../assets/scss/index.scss";
 
 export const Register = () => {
-  const { signup } = useAuth();
+  const { signup, setLoading } = useAuth();
 
   const [user, setUser] = useState({
     email: "",
@@ -15,9 +15,7 @@ export const Register = () => {
   });
   const [error, setError] = useState("");
   const navigate = useNavigate();
-  const [register, setRegister] = useState(false);
-  const isRegister = register ? "active" : "";
-
+  
   const handleChange = ({ target: { value, name } }) =>
     setUser({ ...user, [name]: value });
 
@@ -25,8 +23,9 @@ export const Register = () => {
     e.preventDefault();
     setError("");
     try {
+      setLoading(true)
       await signup(user.email, user.password);
-      navigate("/");
+      navigate("/", {state:true});
     } catch (error) {
       setError(error.message);
     }

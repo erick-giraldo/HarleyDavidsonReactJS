@@ -7,7 +7,7 @@ import { useAuth } from "../../context/AuthContext";
 import "../../assets/scss/index.scss";
 
 export const Login = () => {
-  const { login, loginWithGoogle, resetPassword } = useAuth();
+  const { login, loginWithGoogle, resetPassword, setLoading } = useAuth();
   const [error, setError] = useState("");
   const [user, setUser] = useState({
     email: "",
@@ -21,7 +21,8 @@ export const Login = () => {
     setError("");
     try {
       await login(user.email, user.password);
-      navigate("/");
+      setLoading(true)
+      navigate('/', {state:true});
     } catch (error) {
       setError(error.message);
     }
@@ -32,7 +33,8 @@ export const Login = () => {
   const handleGoogleSignin = async () => {
     try {
       await loginWithGoogle();
-      navigate("/");
+      setLoading(true)
+      navigate('/', {state:true});
     } catch (error) {
       setError(error.message);
     }

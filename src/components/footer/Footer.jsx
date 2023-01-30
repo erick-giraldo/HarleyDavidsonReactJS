@@ -1,10 +1,13 @@
 import React from "react";
 import logo from "../../assets/images/logo.webp";
+import { useAuth } from "../../context/AuthContext";
 
 import "../../assets/scss/index.scss";
 
 const Footer = () => {
-  return (
+  const { loading } = useAuth();
+
+  return !loading ? (
     <footer className="col-lg-12 col-md-12 footer footer-container">
       <div className="redes">
         <a href="https://facebook.com" target="_blank" rel="noreferrer">
@@ -23,7 +26,7 @@ const Footer = () => {
       <p>© 2022. Designed by Erick Giraldo. All right reserved.</p>
       <img src={logo} alt="logo-footer" width="50px" />
     </footer>
-  );
+  ) : '';
 };
 
 export default Footer;
